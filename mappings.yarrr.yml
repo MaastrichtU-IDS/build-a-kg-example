@@ -1,25 +1,22 @@
-# Click on the "Generate RML", then the "Generate LD" buttons
-
 prefixes:
   grel: "http://users.ugent.be/~bjdmeest/function/grel.ttl#"
   rdfs: "http://www.w3.org/2000/01/rdf-schema#"
   schema: "https://schema.org/"
   ken: "https://w3id.org/um/ken4256/"
   fo: "http://purl.org/ontology/fo/"
-
 mappings:
-
   restaurants:
     sources:
       - ['dataworld-restaurants.csv~csv']
-    # Using ken: for my KG entities URIs, 
-    # but using existing concepts and properties from Schema.org and the Food Ontology
+    # We define the subject and graph of this mapping
     s: ken:restaurant/$(Restaurant ID)
     g: ken:graph/restaurants
+    # Then we define the predicate/objects for this subject
+    # aka. the properties/values for this entity
     po:
       - [a, schema:Restaurant]
       - [rdfs:label, $(Restaurant Name)]
-      # Link to cuisine here by creating the same URI:
+      # We link to cuisine here by creating the same URI (identifier):
       - [schema:servesCuisine, ken:cuisine/$(Cuisines)~iri]
       - [schema:location, $(country name)]
       - [schema:address, $(Address)]
@@ -27,7 +24,6 @@ mappings:
       - [schema:currenciesAccepted, $(Currency)]
       - [schema:acceptsReservations, $(Has Table booking)]
       - [schema:aggregateRating, $(Aggregate rating)]
-
   cuisines:
     sources:
       - ['dataworld-cuisines.csv~csv']
@@ -36,11 +32,10 @@ mappings:
     po:
       - [a, fo:Cuisine]
       - [rdfs:label, $(cuisines)]
-      # Use a function to split the diets cell using |
+      # We use a function to split the "diets" cells using |
       - p: schema:suitableForDiet
         o:
           function: grel:string_split
           parameters:
           - [grel:p_string_sep, "\|"]
           - [grel:valueParameter, $(diets)]
-          

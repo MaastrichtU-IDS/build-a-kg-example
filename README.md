@@ -6,7 +6,7 @@ A short tutorial to build a RDF Knowledge Graph about restaurants and cuisines f
 
 1. **Go to https://rml.io/yarrrml/matey**
 
-2. **Create 2 new datasources** for the [`dataworld-restaurants.csv`](/dataworld-restaurants.csv) and [`dataworld-cuisines.csv`](/dataworld-cuisines.csv) files
+2. **Create 2 new datasources** for the [`dataworld-restaurants.csv`](/dataworld-restaurants.csv) and [`dataworld-cuisines.csv`](/dataworld-cuisines.csv) files. Click on the **Input:** tab on the left of the Matey web UI to create new datasources.
 * [`dataworld-restaurants.csv`](/dataworld-restaurants.csv):
 
 ```
@@ -24,7 +24,7 @@ Chinese,yes,yes,no,no,chinese,vegetarian|low_lactose_diet
 indian,no,no,no,no,indian,halal|low_lactose_diet|vegetarian
 ```
 
-3. Copy/paste those [YARRRML mappings](/mappings.yarrr.yml) in the **input: YARRRML** box
+3. Copy/paste those [YARRRML mappings](/mappings.yarrr.yml) in the **input: YARRRML** box in the middle of the Matey web UI
 
 ```yaml
 prefixes:
