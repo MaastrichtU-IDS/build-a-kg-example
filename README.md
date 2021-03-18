@@ -1,6 +1,8 @@
 ## Build a RDF Knowledge Graph from CSV files
 
-A short tutorial to build a RDF Knowledge Graph about restaurants and cuisines from [2 CSV files](https://data.world/mgarfield/restaurants/) using YARRRML mappings.
+A short tutorial to build a RDF Knowledge Graph about restaurants and cuisines from [2 CSV files](https://data.world/mgarfield/restaurants/) using YARRRML mappings. 
+
+> Accessible to anyone without the need to understand anything else than reading English, just follow the instructions and copy/paste the text at the right place in a website.
 
 1. **Go to https://rml.io/yarrrml/matey**
 
@@ -35,12 +37,15 @@ mappings:
   restaurants:
     sources:
       - ['dataworld-restaurants.csv~csv']
+    # We define the subject and graph of this mapping
     s: ken:restaurant/$(Restaurant ID)
     g: ken:graph/restaurants
+    # Then we define the predicate/objects for this subject
+    # aka. the properties/values for this entity
     po:
       - [a, schema:Restaurant]
       - [rdfs:label, $(Restaurant Name)]
-      # Link to cuisine here by creating the same URI:
+      # We link to cuisine here by creating the same URI (identifier):
       - [schema:servesCuisine, ken:cuisine/$(Cuisines)~iri]
       - [schema:location, $(country name)]
       - [schema:address, $(Address)]
@@ -56,7 +61,7 @@ mappings:
     po:
       - [a, fo:Cuisine]
       - [rdfs:label, $(cuisines)]
-      # Use a function to split the diets cell using |
+      # We use a function to split the "diets" cells using |
       - p: schema:suitableForDiet
         o:
           function: grel:string_split
@@ -71,6 +76,6 @@ mappings:
 
 ## Notes
 
-We use the `ken:` prefix for the Knowledge Graph entities URIs (the restaurants and cuisine generated)
+We use our own `ken:` namespace for the Knowledge Graph entities URIs (the restaurants and cuisine generated)
 
-But we use existing concepts and properties from the [Schema.org vocabulary](https://schema.org) and the [Food Ontology](https://www.bbc.co.uk/ontologies/fo#terms_cuisine)
+But we use existing concepts and properties from the [Schema.org vocabulary](https://schema.org) and the [Food Ontology from the BBC](https://www.bbc.co.uk/ontologies/fo#terms_cuisine)
