@@ -65,7 +65,9 @@ mappings:
           - [grel:valueParameter, $(diets)]
 ```
 
-4. Click on **Generate RML**, then **Generate LD** buttons
+4. Click on **Generate RML**, then **Generate LD** buttons. The conversion should take around 10s.
+
+![Screenshot of Matey Web UI](screenshot-matey-web-ui.png)
 
 ## Notes
 
