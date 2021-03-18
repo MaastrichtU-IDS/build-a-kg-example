@@ -1,0 +1,4 @@
+Restaurant ID,Restaurant Name,City,country name,Address,Locality,Locality Verbose,Longitude,Latitude,Cuisines,Average Cost for two,Currency,Has Table booking,Has Online delivery,Is delivering now,Switch to order menu,Price range,Aggregate rating,Rating color,Rating text,Votes
+53,Amber,New Delhi,India,"N-19, Connaught Place, New Delhi",Connaught Place,"Connaught Place, New Delhi",77.220891,28.630197,indian,1800,Indian Rupees(Rs.),Yes,Yes,No,No,3,2.6,Orange,Average,152
+55,Berco's,New Delhi,India,"G-2/43, Middle Circle, Connaught Place, New Delhi",Connaught Place,"Connaught Place, New Delhi",77.217298,28.632452,Chinese,1100,Indian Rupees(Rs.),Yes,Yes,No,No,3,3.9,Yellow,Good,2639
+60,Colonel's Kababz,New Delhi,India,"29, Defence Colony Market, Defence Colony, New Delhi",Defence Colony,"Defence Colony, New Delhi",77.230591,28.574036,indian,900,Indian Rupees(Rs.),Yes,No,No,No,2,3.2,Orange,Average,600
