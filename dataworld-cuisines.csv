@@ -1,3 +1,3 @@
-cuisines,uses pork,mostly vegetarian,spicy,use lactose,id,diets
-Chinese,yes,yes,no,no,chinese,vegetarian|low_lactose_diet
-indian,no,no,no,no,indian,halal|low_lactose_diet|vegetarian
+cuisines,diets
+Chinese,vegetarian|low_lactose_diet
+indian,halal|low_lactose_diet|vegetarian

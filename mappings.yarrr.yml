@@ -2,22 +2,23 @@ prefixes:
   grel: "http://users.ugent.be/~bjdmeest/function/grel.ttl#"
   rdfs: "http://www.w3.org/2000/01/rdf-schema#"
   schema: "https://schema.org/"
-  ken: "https://w3id.org/um/ken4256/"
   fo: "http://purl.org/ontology/fo/"
+  mykg: "https://w3id.org/mykg/"
+  # We use w3id.org to simulate persistent ID for our entities
 mappings:
   restaurants:
     sources:
       - ['dataworld-restaurants.csv~csv']
     # We define the subject and graph of this mapping
-    s: ken:restaurant/$(Restaurant ID)
-    g: ken:graph/restaurants
+    s: mykg:restaurant/$(Restaurant ID)
+    g: mykg:graph/restaurants
     # Then we define the predicate/objects for this subject
     # aka. the properties/values for this entity
     po:
       - [a, schema:Restaurant]
       - [rdfs:label, $(Restaurant Name)]
       # We link to cuisine here by creating the same URI (identifier):
-      - [schema:servesCuisine, ken:cuisine/$(Cuisines)~iri]
+      - [schema:servesCuisine, mykg:cuisine/$(Cuisines)~iri]
       - [schema:location, $(country name)]
       - [schema:address, $(Address)]
       - [schema:priceRange, $(Price range)]
@@ -27,8 +28,8 @@ mappings:
   cuisines:
     sources:
       - ['dataworld-cuisines.csv~csv']
-    s: ken:cuisine/$(cuisines)
-    g: ken:graph/restaurants
+    s: mykg:cuisine/$(cuisines)
+    g: mykg:graph/cuisines
     po:
       - [a, fo:Cuisine]
       - [rdfs:label, $(cuisines)]
